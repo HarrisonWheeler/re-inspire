@@ -2,7 +2,7 @@
 node_modules
 appsettings.Development.json
 appsettings.json
-/dist
+
 
 
 # local env files
