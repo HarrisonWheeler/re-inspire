@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+// using System.Web.Http.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Reinspire.Models;
@@ -11,6 +12,8 @@ namespace Reinspire.Controllers
 {
   [ApiController]
   [Route("api/[controller]")]
+
+  // [EnableCors(origins: "http://localhost:8080", headers: "*", methods: "*")]
   public class QuotesController : ControllerBase
   {
 
