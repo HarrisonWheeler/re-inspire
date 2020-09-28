@@ -48,5 +48,19 @@ namespace Reinspire.Controllers
         return BadRequest(err.Message);
       }
     }
+
+    [HttpDelete("{quoteId}")]
+
+    public ActionResult<string> Delete(int quoteId)
+    {
+      try
+      {
+        return Ok(_qs.Delete(quoteId));
+      }
+      catch (System.Exception err)
+      {
+        return BadRequest(err.Message);
+      }
+    }
   }
 }

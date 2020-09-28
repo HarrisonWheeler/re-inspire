@@ -32,5 +32,12 @@ namespace Reinspire.Repository
       SELECT LAST_INSERT_ID();";
       return _db.ExecuteScalar<int>(sql, newQuote);
     }
+
+    public bool Delete(int quoteId)
+    {
+      string sql = "DELETE FROM quotes WHERE id = @quoteId LIMIT 1;";
+      int rowsAffected = _db.Execute(sql, new { quoteId });
+      return rowsAffected == 1;
+    }
   }
 }

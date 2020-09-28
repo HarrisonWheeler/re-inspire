@@ -25,5 +25,10 @@ namespace Reinspire.Services
       newQuote.Id = id;
       return newQuote;
     }
+
+    public bool Delete(int quoteId)
+    {
+      return _repo.Delete(quoteId);
+    }
   }
 }
