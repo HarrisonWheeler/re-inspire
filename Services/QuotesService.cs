@@ -18,5 +18,12 @@ namespace Reinspire.Services
     {
       return _repo.Get();
     }
+
+    public Quote Create(Quote newQuote)
+    {
+      int id = _repo.Create(newQuote);
+      newQuote.Id = id;
+      return newQuote;
+    }
   }
 }

@@ -21,5 +21,16 @@ namespace Reinspire.Repository
       string sql = "SELECT * FROM quotes";
       return _db.Query<Quote>(sql);
     }
+
+    public int Create(Quote newQuote)
+    {
+      string sql = @"
+      INSERT INTO quotes
+      (name, description, isExplicit)
+      VALUES
+      (@name, @description, @isExplicit);
+      SELECT LAST_INSERT_ID();";
+      return _db.ExecuteScalar<int>(sql, newQuote);
+    }
   }
 }

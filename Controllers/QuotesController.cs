@@ -34,5 +34,19 @@ namespace Reinspire.Controllers
         return BadRequest(err.Message);
       }
     }
+
+    [HttpPost]
+
+    public ActionResult<Quote> Post([FromBody] Quote newQuote)
+    {
+      try
+      {
+        return Ok(_qs.Create(newQuote));
+      }
+      catch (System.Exception err)
+      {
+        return BadRequest(err.Message);
+      }
+    }
   }
 }
