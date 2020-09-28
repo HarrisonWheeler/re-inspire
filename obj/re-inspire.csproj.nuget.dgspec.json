@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\personal\\projects\\re-inspire\\re-inspire.csproj": {}
+    "C:\\personal\\projects\\re-inspire\\re-inspire.csproj": {}
   },
   "projects": {
-    "c:\\personal\\projects\\re-inspire\\re-inspire.csproj": {
+    "C:\\personal\\projects\\re-inspire\\re-inspire.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\personal\\projects\\re-inspire\\re-inspire.csproj",
+        "projectUniqueName": "C:\\personal\\projects\\re-inspire\\re-inspire.csproj",
         "projectName": "re-inspire",
-        "projectPath": "c:\\personal\\projects\\re-inspire\\re-inspire.csproj",
+        "projectPath": "C:\\personal\\projects\\re-inspire\\re-inspire.csproj",
         "packagesPath": "C:\\Users\\Snowb\\.nuget\\packages\\",
-        "outputPath": "c:\\personal\\projects\\re-inspire\\obj\\",
+        "outputPath": "C:\\personal\\projects\\re-inspire\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Snowb\\AppData\\Roaming\\NuGet\\NuGet.Config"

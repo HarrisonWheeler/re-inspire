@@ -7,6 +7,6 @@
 -- );
 
 -- INSERT INTO quotes (name, description, isExplicit)
--- VALUES ("Amanda Wheeler", "Go ahead. Do it. Drink that milk!", 0)
+-- VALUES ("Kyle Whittingham", "We played about 55 minutes of very good football,", 0)
 
-SELECT * FROM quotes
+-- SELECT * FROM quotes

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HzXkD32AbG2t6POZnD66DlPkaaFn8yymloqrgHMElUkOfYiVx+b3P9Xk1YWLOfgDqNSRRQCev1j10hkBNdgO1g==",
+  "dgSpecHash": "UA279kjpfxkAOL8FOvyWv2MSjVyfXsKx2a+LHwTtLf5hD6f/PsCAoC+y6MyDnckfjZQ7f2dg8LVRQHoYN+jnAg==",
   "success": true,
-  "projectFilePath": "c:\\personal\\projects\\re-inspire\\re-inspire.csproj",
+  "projectFilePath": "C:\\personal\\projects\\re-inspire\\re-inspire.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Snowb\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
     "C:\\Users\\Snowb\\.nuget\\packages\\mysqlconnector\\1.0.1\\mysqlconnector.1.0.1.nupkg.sha512",
