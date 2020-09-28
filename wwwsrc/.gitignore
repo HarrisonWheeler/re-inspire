@@ -1,8 +1,8 @@
 .DS_Store
 node_modules
-appsettings.Development.json
+/dist
 appsettings.json
-
+appsettings.Development.json
 
 
 # local env files
