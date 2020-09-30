@@ -29,8 +29,8 @@ export default new Vuex.Store({
     async getQuotes({ commit }) {
       try {
         let res = await api.get("quotes")
-        console.log(res);
-        commit("setActiveQuotes", res)
+        console.log(res.data);
+        commit("setActiveQuotes", res.data)
       } catch (error) {
         console.error(error)
       }
