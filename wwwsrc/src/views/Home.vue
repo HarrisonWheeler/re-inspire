@@ -11,15 +11,15 @@ export default {
   },
   mounted() {
     this.$store.dispatch("getQuotes");
-    // this.$store.dispatch("getBcwData");
+    this.$store.dispatch("getWeather");
   },
   computed: {
     quotes() {
       return this.$store.state.activeQuotes;
     },
-    // images() {
-    //   return this.$store.state.images;
-    // },
+    weather() {
+      return this.$store.state.activeWeather;
+    },
   },
   methods: {},
   components: {},

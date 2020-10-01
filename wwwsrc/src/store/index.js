@@ -1,18 +1,22 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { api } from "./AxiosService"
+import weatherModule from "./WeatherModule"
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
     activeQuotes: [],
-    // images: [],
+    activeWeather: {}
   },
   mutations: {
     setActiveQuotes(state, quotes) {
       state.activeQuotes = quotes
     },
+    setActiveWeather(state, weather) {
+      state.activeWeather = weather
+    }
   },
   actions: {
     async getQuotes({ commit }) {
@@ -24,14 +28,8 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
-    // async getWeather({ commit }) {
-    //   try {
-    //     let res = await weatherApi.get()
-    //   } catch (error) {
-    //     console.error(error)
-    //   }
-    // }
   },
   modules: {
+    weatherModule,
   }
 })

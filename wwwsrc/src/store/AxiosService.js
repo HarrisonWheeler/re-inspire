@@ -10,7 +10,8 @@ export const api = Axios.create({
   withCredentials: true
 });
 
-let weatherKey = "https://api.climacell.co/v3/locations?apikey=9Qenj97iFgL3Zk7m3KiaLYGj6ITiV9YT"
+// if error, may need to add / after v3
+let weatherKey = "https://api.climacell.co/v3/weather"
 
 export const weatherApi = Axios.create({
   baseURL: weatherKey,
