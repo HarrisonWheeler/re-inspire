@@ -1,13 +1,11 @@
 <template>
   <div class="home container-fluid">
-    <!-- <Images v-for="image in images" :imageData="image" :key="image.id" /> -->
-    <img :src="images.urls.full" alt="" />
+    <img :src="images.urls.full" alt="" class="img-fluid" />
   </div>
 </template>
 
 
 <script>
-// import Images from "../components/Images";
 export default {
   name: "home",
   data() {
@@ -30,9 +28,7 @@ export default {
     },
   },
   methods: {},
-  components: {
-    // Images,
-  },
+  components: {},
 };
 </script>
 
