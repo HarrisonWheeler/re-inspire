@@ -1,9 +1,13 @@
 <template>
-  <div class="home"></div>
+  <div class="home container-fluid">
+    <!-- <Images v-for="image in images" :imageData="image" :key="image.id" /> -->
+    <img :src="images.urls.full" alt="" />
+  </div>
 </template>
 
 
 <script>
+// import Images from "../components/Images";
 export default {
   name: "home",
   data() {
@@ -21,9 +25,14 @@ export default {
     weather() {
       return this.$store.state.activeWeather;
     },
+    images() {
+      return this.$store.state.randomImage;
+    },
   },
   methods: {},
-  components: {},
+  components: {
+    // Images,
+  },
 };
 </script>
 
