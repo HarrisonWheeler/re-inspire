@@ -11,11 +11,15 @@ export default {
   },
   mounted() {
     this.$store.dispatch("getQuotes");
+    // this.$store.dispatch("getBcwData");
   },
   computed: {
     quotes() {
       return this.$store.state.activeQuotes;
     },
+    // images() {
+    //   return this.$store.state.images;
+    // },
   },
   methods: {},
   components: {},
