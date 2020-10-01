@@ -2,13 +2,15 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import { api } from "./AxiosService"
 import weatherModule from "./WeatherModule"
+import imageModule from "./ImageModule"
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
     activeQuotes: [],
-    activeWeather: {}
+    activeWeather: {},
+    randomImage: {}
   },
   mutations: {
     setActiveQuotes(state, quotes) {
@@ -16,6 +18,9 @@ export default new Vuex.Store({
     },
     setActiveWeather(state, weather) {
       state.activeWeather = weather
+    },
+    setRandomImage(state, randomImage) {
+      state.randomImage = randomImage
     }
   },
   actions: {
@@ -31,5 +36,6 @@ export default new Vuex.Store({
   },
   modules: {
     weatherModule,
+    imageModule,
   }
 })

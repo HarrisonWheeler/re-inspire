@@ -12,6 +12,7 @@ export default {
   mounted() {
     this.$store.dispatch("getQuotes");
     this.$store.dispatch("getWeather");
+    this.$store.dispatch("getRandomImage");
   },
   computed: {
     quotes() {

@@ -13,12 +13,17 @@ export const api = Axios.create({
 // if error, may need to add / after v3
 let weatherKey = "https://api.climacell.co/v3/weather"
 
+let imageKey = "https://api.unsplash.com/"
+
 export const weatherApi = Axios.create({
   baseURL: weatherKey,
   timeout: 10000,
 })
 
-
+export const imageApi = Axios.create({
+  baseURL: imageKey,
+  timeout: 10000,
+})
 export const setBearer = function (bearer) {
   api.defaults.headers.authorization = bearer;
 };
