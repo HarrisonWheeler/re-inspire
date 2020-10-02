@@ -1,6 +1,8 @@
 <template>
-  <div class="home container-fluid">
-    <img :src="images.urls.full" alt="" class="img-fluid" />
+  <div class="home container-fluid p-0">
+    <div class="row">
+      <img :src="images.urls.full" alt="" class="img-fluid" />
+    </div>
   </div>
 </template>
 
@@ -34,4 +36,12 @@ export default {
 
 
 <style scoped>
+img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 </style>
