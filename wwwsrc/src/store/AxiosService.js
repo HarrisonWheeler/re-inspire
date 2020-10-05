@@ -17,7 +17,7 @@ let imageKey = "https://api.unsplash.com/"
 
 let sportsKey = "https://api.collegefootballdata.com/"
 
-
+let newsKey = "https://newsapi.org/v2/top-headlines?country=us&apiKey=c81be01485874f8c81e02f457799b44f"
 
 export const weatherApi = Axios.create({
   baseURL: weatherKey,
@@ -31,6 +31,11 @@ export const imageApi = Axios.create({
 
 export const sportsApi = Axios.create({
   baseURL: sportsKey,
+  timeout: 10000,
+})
+
+export const newsApi = Axios.create({
+  baseURL: newsKey,
   timeout: 10000,
 })
 export const setBearer = function (bearer) {

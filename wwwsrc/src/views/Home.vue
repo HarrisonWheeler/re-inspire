@@ -50,11 +50,12 @@ export default {
     };
   },
   mounted() {
-    this.$store.dispatch("getQuotes");
-    this.$store.dispatch("getWeather");
     this.$store.dispatch("getRandomImage");
+    this.$store.dispatch("getWeather");
+    this.$store.dispatch("getQuotes");
     this.$store.dispatch("getRankings");
     this.$store.dispatch("getFootballScores");
+    this.$store.dispatch("getNews");
   },
   computed: {
     quotes() {
@@ -71,6 +72,9 @@ export default {
     },
     scores() {
       return this.$store.state.activeScores;
+    },
+    news() {
+      return this.$store.state.activeNews;
     },
   },
   methods: {},
