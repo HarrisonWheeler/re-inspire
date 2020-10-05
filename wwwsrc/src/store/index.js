@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { api } from "./AxiosService"
 import weatherModule from "./WeatherModule"
 import imageModule from "./ImageModule"
 import SportsModule from "./SportsModule"
 import NewsModule from "./NewsModule"
+import QuotesModule from "./QuotesModule"
 
 Vue.use(Vuex)
 
@@ -37,21 +37,12 @@ export default new Vuex.Store({
       state.activeNews = activeNews
     }
   },
-  actions: {
-    async getQuotes({ commit }) {
-      try {
-        let res = await api.get("quotes")
-        console.log(res.data);
-        commit("setActiveQuotes", res.data)
-      } catch (error) {
-        console.error(error)
-      }
-    },
-  },
+  actions: {},
   modules: {
     weatherModule,
     imageModule,
     SportsModule,
     NewsModule,
+    QuotesModule,
   }
 })

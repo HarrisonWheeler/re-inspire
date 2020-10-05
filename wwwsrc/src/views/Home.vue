@@ -36,12 +36,14 @@
       :rankingData="ranking"
       :key="ranking.id"
     />
+    <news v-for="news in headlineNews" :newsData="news" :key="news.id" />
   </div>
 </template>
 
 
 <script>
 import Sports from "../components/Sports";
+import News from "../components/News";
 export default {
   name: "home",
   data() {
@@ -50,6 +52,7 @@ export default {
     };
   },
   mounted() {
+    // best way to refactor? use mounted in components when refactored?
     this.$store.dispatch("getRandomImage");
     this.$store.dispatch("getWeather");
     this.$store.dispatch("getQuotes");
@@ -58,6 +61,7 @@ export default {
     this.$store.dispatch("getNews");
   },
   computed: {
+    // best way to refactor? use mounted in components when refactored?
     quotes() {
       return this.$store.state.activeQuotes;
     },
@@ -73,13 +77,14 @@ export default {
     scores() {
       return this.$store.state.activeScores;
     },
-    news() {
+    headlineNews() {
       return this.$store.state.activeNews;
     },
   },
   methods: {},
   components: {
     Sports,
+    News,
   },
 };
 </script>

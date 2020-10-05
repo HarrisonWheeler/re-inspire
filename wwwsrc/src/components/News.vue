@@ -1,15 +1,12 @@
 <template>
-  <div class="sports">
-    <!-- will be filling out this component -->
-    <h1></h1>
-  </div>
+  <div class="news text-light">{{ newsData.title }}</div>
 </template>
 
 
 <script>
 export default {
-  name: "sports",
-  props: ["rankingData"],
+  name: "news",
+  props: ["newsData"],
   data() {
     return {};
   },
