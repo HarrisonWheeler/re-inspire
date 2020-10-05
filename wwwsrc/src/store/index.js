@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import { api } from "./AxiosService"
 import weatherModule from "./WeatherModule"
 import imageModule from "./ImageModule"
+import SportsModule from "./SportsModule"
 
 Vue.use(Vuex)
 
@@ -10,7 +11,9 @@ export default new Vuex.Store({
   state: {
     activeQuotes: [],
     activeWeather: {},
-    randomImage: {}
+    randomImage: {},
+    activeSports: {},
+    activeRankings: {},
   },
   mutations: {
     setActiveQuotes(state, quotes) {
@@ -21,6 +24,12 @@ export default new Vuex.Store({
     },
     setRandomImage(state, randomImage) {
       state.randomImage = randomImage
+    },
+    setActiveSports(state, activeSports) {
+      state.activeSports = activeSports
+    },
+    setActiveRankings(state, activeRankings) {
+      state.activeRankings = activeRankings
     }
   },
   actions: {
@@ -37,5 +46,6 @@ export default new Vuex.Store({
   modules: {
     weatherModule,
     imageModule,
+    SportsModule,
   }
 })

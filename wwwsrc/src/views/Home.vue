@@ -1,13 +1,14 @@
 <template>
   <div class="home container-fluid p-0">
-    <div class="row">
-      <img :src="images.urls.full" alt="" class="img-fluid" />
-    </div>
+    <img :src="images.urls.full" alt="" class="img-fluid" />
+    <Sports />
+    <div class="row"></div>
   </div>
 </template>
 
 
 <script>
+import Sports from "../components/Sports";
 export default {
   name: "home",
   data() {
@@ -17,6 +18,8 @@ export default {
     this.$store.dispatch("getQuotes");
     this.$store.dispatch("getWeather");
     this.$store.dispatch("getRandomImage");
+    this.$store.dispatch("getSports");
+    this.$store.dispatch("getRankings");
   },
   computed: {
     quotes() {
@@ -28,9 +31,14 @@ export default {
     images() {
       return this.$store.state.randomImage;
     },
+    utahFootball() {
+      return this.$store.state.activeSports;
+    },
   },
   methods: {},
-  components: {},
+  components: {
+    Sports,
+  },
 };
 </script>
 

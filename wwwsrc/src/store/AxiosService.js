@@ -15,6 +15,8 @@ let weatherKey = "https://api.climacell.co/v3/weather"
 
 let imageKey = "https://api.unsplash.com/"
 
+let sportsKey = "https://api.collegefootballdata.com/"
+
 export const weatherApi = Axios.create({
   baseURL: weatherKey,
   timeout: 10000,
@@ -22,6 +24,11 @@ export const weatherApi = Axios.create({
 
 export const imageApi = Axios.create({
   baseURL: imageKey,
+  timeout: 10000,
+})
+
+export const sportsApi = Axios.create({
+  baseURL: sportsKey,
   timeout: 10000,
 })
 export const setBearer = function (bearer) {
