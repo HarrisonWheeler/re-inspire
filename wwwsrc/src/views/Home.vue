@@ -5,12 +5,29 @@
     :style="{ backgroundImage: `url(${images.urls.full})` }"
   >
     <div class="row justify-content-end p-2">
-      <div class="card bg-light mb-3" style="max-width: 18rem">
-        <div class="card-header text-center">Boise, ID</div>
+      <div class="card bg-secondary mb-3" style="max-width: 20rem">
+        <div class="card-header text-center">
+          Boise, ID -
+          {{ weather.weather_code.value.toUpperCase() }}
+        </div>
         <div class="card-body">
           <p class="card-text">
-            {{ weather.temp.value }} {{ weather.temp.units }}
+            Temp: {{ Math.round(weather.temp.value) }}°{{
+              weather.temp.units
+            }}
+            || Humidity: {{ Math.round(weather.humidity.value)
+            }}{{ weather.humidity.units }}
           </p>
+          <p>
+            Feels Like: {{ Math.round(weather.feels_like.value) }}°{{
+              weather.feels_like.units
+            }}
+            || Wind: {{ Math.round(weather.wind_gust.value)
+            }}{{ weather.wind_gust.units }}
+          </p>
+          <p>Sunrise: {{ new Date(weather.sunrise.value).toLocaleString() }}</p>
+          <p>Sunset: {{ new Date(weather.sunset.value).toLocaleString() }}</p>
+          <p>Air Quality Index: {{ Math.round(weather.epa_aqi.value) }}</p>
         </div>
       </div>
     </div>
