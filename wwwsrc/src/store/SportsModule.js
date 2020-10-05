@@ -3,7 +3,7 @@ import { sportsApi } from "./AxiosService"
 export default {
 
   actions: {
-    async getSports({ commit }) {
+    async getUtahFootball({ commit }) {
       try {
         let res = await sportsApi.get("games?year=2020&seasonType=regular&team=utah")
         console.log(res.data);

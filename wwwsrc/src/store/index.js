@@ -12,7 +12,7 @@ export default new Vuex.Store({
     activeQuotes: [],
     activeWeather: {},
     randomImage: {},
-    activeSports: {},
+    utahFootball: {},
     activeRankings: {},
   },
   mutations: {
@@ -25,8 +25,8 @@ export default new Vuex.Store({
     setRandomImage(state, randomImage) {
       state.randomImage = randomImage
     },
-    setActiveSports(state, activeSports) {
-      state.activeSports = activeSports
+    setActiveSports(state, utahFootball) {
+      state.utahFootball = utahFootball
     },
     setActiveRankings(state, activeRankings) {
       state.activeRankings = activeRankings
