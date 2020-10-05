@@ -3,11 +3,11 @@ import { sportsApi } from "./AxiosService"
 export default {
 
   actions: {
-    async getUtahFootball({ commit }) {
+    async getFootballScores({ commit }) {
       try {
-        let res = await sportsApi.get("games?year=2020&seasonType=regular&team=utah")
+        let res = await sportsApi.get("games?year=2020&seasonType=regular")
         console.log(res.data);
-        commit("setActiveSports", res.data)
+        commit("setActiveScores", res.data)
       } catch (error) {
         console.error(error)
       }

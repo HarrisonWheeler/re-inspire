@@ -1,11 +1,14 @@
 <template>
-  <div class="sports"></div>
+  <div class="sports">
+    <h1></h1>
+  </div>
 </template>
 
 
 <script>
 export default {
   name: "sports",
+  props: ["rankingData"],
   data() {
     return {};
   },

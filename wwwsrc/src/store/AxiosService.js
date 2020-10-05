@@ -17,6 +17,8 @@ let imageKey = "https://api.unsplash.com/"
 
 let sportsKey = "https://api.collegefootballdata.com/"
 
+
+
 export const weatherApi = Axios.create({
   baseURL: weatherKey,
   timeout: 10000,
