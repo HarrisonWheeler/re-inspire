@@ -31,12 +31,16 @@
         </div>
       </div>
     </div>
-    <sports
-      v-for="ranking in rankings"
-      :rankingData="ranking"
-      :key="ranking.id"
-    />
-    <news v-for="news in headlineNews" :newsData="news" :key="news.id" />
+    <div class="row">
+      <div class="col-6">
+        <news v-for="news in headlineNews" :newsData="news" :key="news.id" />
+      </div>
+      <sports
+        v-for="ranking in rankings"
+        :rankingData="ranking"
+        :key="ranking.id"
+      />
+    </div>
   </div>
 </template>
 
@@ -52,7 +56,7 @@ export default {
     };
   },
   mounted() {
-    // best way to refactor? use mounted in components when refactored?
+    // best way to refactor?
     this.$store.dispatch("getRandomImage");
     this.$store.dispatch("getWeather");
     this.$store.dispatch("getQuotes");
@@ -61,7 +65,7 @@ export default {
     this.$store.dispatch("getNews");
   },
   computed: {
-    // best way to refactor? use mounted in components when refactored?
+    // best way to refactor?
     quotes() {
       return this.$store.state.activeQuotes;
     },
