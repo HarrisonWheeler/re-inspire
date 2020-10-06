@@ -1,5 +1,9 @@
 <template>
-  <div class="news text-light">{{ newsData.title }}</div>
+  <div class="news text-dark">
+    <h6>
+      {{ newsData.title }}
+    </h6>
+  </div>
 </template>
 
 

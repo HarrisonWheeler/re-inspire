@@ -5,7 +5,8 @@
     :style="{ backgroundImage: `url(${images.urls.full})` }"
   >
     <div class="row justify-content-end p-2">
-      <div class="card bg-primary mb-3" style="max-width: 20rem">
+      <!-- need to make white background more transparent -->
+      <div class="card border-light mb-3" style="max-width: 20rem">
         <div class="card-header text-center">
           Boise, ID -
           {{ weather.weather_code.value.toUpperCase() }}
@@ -31,9 +32,26 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row justify-content-center">
       <div class="col-6">
-        <news v-for="news in headlineNews" :newsData="news" :key="news.id" />
+        <div class="jumbotron" style="min-width: 45rem">
+          <h1 class="display-3 text-center">Hello, Harrison!</h1>
+          <h1 class="display-4 text-center">It's {{ currentTime }}</h1>
+          <p class="lead text-center">Here are some headlines:</p>
+          <hr class="my-4" />
+          <p>
+            <news
+              v-for="news in headlineNews"
+              :newsData="news"
+              :key="news.id"
+            />
+          </p>
+          <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button"
+              >Learn more</a
+            >
+          </p>
+        </div>
       </div>
       <sports
         v-for="ranking in rankings"
@@ -48,6 +66,7 @@
 <script>
 import Sports from "../components/Sports";
 import News from "../components/News";
+import moment from "moment";
 export default {
   name: "home",
   data() {
@@ -83,6 +102,9 @@ export default {
     },
     headlineNews() {
       return this.$store.state.activeNews;
+    },
+    currentTime() {
+      return moment().format("h:mm a, MMMM Do");
     },
   },
   methods: {},
