@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: "app",
+  name: "App",
   data() {
     return {};
   },
@@ -19,5 +19,8 @@ export default {
 </script>
 
 
-<style scoped>
+<style lang="scss">
+@import "./assets/_variables.scss";
+// @import "bootstrap";
+@import "./assets/_overrides.scss";
 </style>

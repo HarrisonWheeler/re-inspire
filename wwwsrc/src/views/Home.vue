@@ -5,7 +5,7 @@
     :style="{ backgroundImage: `url(${images.urls.full})` }"
   >
     <div class="row justify-content-end p-2">
-      <div class="card bg-secondary mb-3" style="max-width: 20rem">
+      <div class="card bg-primary mb-3" style="max-width: 20rem">
         <div class="card-header text-center">
           Boise, ID -
           {{ weather.weather_code.value.toUpperCase() }}
