@@ -2,11 +2,17 @@
   <div
     class="home container-fluid img-fluid"
     id="img"
+    v-if="images.urls"
     :style="{ backgroundImage: `url(${images.urls.full})` }"
   >
     <!-- need to make white background more transparent -->
     <div class="row justify-content-end p-2">
-      <div class="card mb-3" id="bg-transparent" style="max-width: 20rem">
+      <div
+        class="card mb-3"
+        id="bg-transparent"
+        style="max-width: 20rem"
+        v-if="weather.temp"
+      >
         <div class="card-header text-center">
           Boise, ID -
           {{ weather.weather_code.value.toUpperCase() }}
@@ -40,7 +46,7 @@
           <p class="lead text-center">Here are some headlines:</p>
           <hr class="my-4" />
           <p>
-            <news
+            <News
               v-for="news in headlineNews"
               :newsData="news"
               :key="news.id"
@@ -53,7 +59,7 @@
           </p>
         </div>
       </div>
-      <sports
+      <Sports
         v-for="ranking in rankings"
         :rankingData="ranking"
         :key="ranking.id"
@@ -70,9 +76,7 @@ import moment from "moment";
 export default {
   name: "home",
   data() {
-    return {
-      url: "",
-    };
+    return {};
   },
   mounted() {
     // best way to refactor?
