@@ -5,38 +5,8 @@
     v-if="images.urls"
     :style="{ backgroundImage: `url(${images.urls.full})` }"
   >
-    <!-- need to make white background more transparent -->
     <div class="row justify-content-end text-light p-2">
-      <div
-        class="card mb-3"
-        id="bg-transparent"
-        style="max-width: 20rem"
-        v-if="weather.temp"
-      >
-        <div class="card-header text-center">
-          Boise, ID -
-          {{ weather.weather_code.value.toUpperCase() }}
-        </div>
-        <div class="card-body">
-          <p class="card-text">
-            Temp: {{ Math.round(weather.temp.value) }}°{{
-              weather.temp.units
-            }}
-            || Humidity: {{ Math.round(weather.humidity.value)
-            }}{{ weather.humidity.units }}
-          </p>
-          <p>
-            Feels Like: {{ Math.round(weather.feels_like.value) }}°{{
-              weather.feels_like.units
-            }}
-            || Wind: {{ Math.round(weather.wind_gust.value)
-            }}{{ weather.wind_gust.units }}
-          </p>
-          <p>Sunrise: {{ new Date(weather.sunrise.value).toLocaleString() }}</p>
-          <p>Sunset: {{ new Date(weather.sunset.value).toLocaleString() }}</p>
-          <p>Air Quality Index: {{ Math.round(weather.epa_aqi.value) }}</p>
-        </div>
-      </div>
+      <Weather />
     </div>
     <div class="row justify-content-center">
       <div class="col-6">
@@ -73,6 +43,7 @@
         :rankingData="ranking"
         :key="ranking.id"
       />
+      <Quotes />
     </div>
   </div>
 </template>
@@ -82,6 +53,8 @@
 import Sports from "../components/Sports";
 import News from "../components/News";
 import moment from "moment";
+import Quotes from "../components/Quotes";
+import Weather from "../components/Weather";
 export default {
   name: "home",
   data() {
@@ -93,7 +66,6 @@ export default {
   mounted() {
     // best way to refactor?
     this.$store.dispatch("getRandomImage");
-    this.$store.dispatch("getWeather");
     this.$store.dispatch("getQuotes");
     this.$store.dispatch("getRankings");
     this.$store.dispatch("getFootballScores");
@@ -103,9 +75,6 @@ export default {
     // best way to refactor?
     quotes() {
       return this.$store.state.activeQuotes;
-    },
-    weather() {
-      return this.$store.state.activeWeather;
     },
     images() {
       return this.$store.state.randomImage;
@@ -127,6 +96,8 @@ export default {
   components: {
     Sports,
     News,
+    Quotes,
+    Weather,
   },
 };
 </script>
