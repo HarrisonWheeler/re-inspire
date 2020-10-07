@@ -6,7 +6,7 @@
     :style="{ backgroundImage: `url(${images.urls.full})` }"
   >
     <!-- need to make white background more transparent -->
-    <div class="row justify-content-end p-2">
+    <div class="row justify-content-end text-light p-2">
       <div
         class="card mb-3"
         id="bg-transparent"
@@ -40,21 +40,25 @@
     </div>
     <div class="row justify-content-center">
       <div class="col-6">
-        <div class="jumbotron" id="bg-transparent" style="min-width: 45rem">
+        <div
+          class="jumbotron text-light"
+          id="bg-transparent"
+          style="min-width: 50rem"
+        >
           <h1 class="display-3 text-center">Hello, Harrison!</h1>
           <h1 class="display-4 text-center">It's {{ currentTime }}</h1>
           <p class="lead text-center">Here are some headlines:</p>
           <hr class="my-4" />
           <p>
             <News
-              v-for="news in headlineNews"
+              v-for="news in headlineNews.slice(0, 3)"
               :newsData="news"
               :key="news.id"
             />
           </p>
-          <p class="lead">
-            <a class="btn btn-primary btn-lg" href="#" role="button"
-              >Learn more</a
+          <p class="lead text-center">
+            <a class="btn btn-info btn-lg" href="#" role="button"
+              >See More....</a
             >
           </p>
         </div>
@@ -129,6 +133,6 @@ export default {
   background-repeat: no-repeat;
 }
 #bg-transparent {
-  background-color: #c2bfbf46;
+  background-color: #0a0a0a60;
 }
 </style>
