@@ -49,7 +49,8 @@
           <h1 class="display-4 text-center">It's {{ currentTime }}</h1>
           <p class="lead text-center">Here are some headlines:</p>
           <hr class="my-4" />
-          <p>
+          <p v-if="showMoreStories">
+            <!-- need to change how this is displaying data to show more stories -->
             <News
               v-for="news in headlineNews.slice(0, 3)"
               :newsData="news"
@@ -57,9 +58,13 @@
             />
           </p>
           <p class="lead text-center">
-            <a class="btn btn-info btn-lg" href="#" role="button"
-              >See More....</a
+            <button
+              class="btn btn-info btn-lg"
+              v-if="!isLoadingStories"
+              @click="showMoreStories = !showMoreStories"
             >
+              See More....
+            </button>
           </p>
         </div>
       </div>
@@ -80,7 +85,10 @@ import moment from "moment";
 export default {
   name: "home",
   data() {
-    return {};
+    return {
+      isLoadingStories: false,
+      showMoreStories: true,
+    };
   },
   mounted() {
     // best way to refactor?
