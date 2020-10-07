@@ -4,9 +4,9 @@
     id="img"
     :style="{ backgroundImage: `url(${images.urls.full})` }"
   >
+    <!-- need to make white background more transparent -->
     <div class="row justify-content-end p-2">
-      <!-- need to make white background more transparent -->
-      <div class="card border-light mb-3" style="max-width: 20rem">
+      <div class="card mb-3" id="bg-transparent" style="max-width: 20rem">
         <div class="card-header text-center">
           Boise, ID -
           {{ weather.weather_code.value.toUpperCase() }}
@@ -34,7 +34,7 @@
     </div>
     <div class="row justify-content-center">
       <div class="col-6">
-        <div class="jumbotron" style="min-width: 45rem">
+        <div class="jumbotron" id="bg-transparent" style="min-width: 45rem">
           <h1 class="display-3 text-center">Hello, Harrison!</h1>
           <h1 class="display-4 text-center">It's {{ currentTime }}</h1>
           <p class="lead text-center">Here are some headlines:</p>
@@ -123,5 +123,8 @@ export default {
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
+}
+#bg-transparent {
+  background-color: #c2bfbf46;
 }
 </style>
