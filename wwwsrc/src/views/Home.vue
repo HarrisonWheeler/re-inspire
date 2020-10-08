@@ -43,7 +43,13 @@
         :rankingData="ranking"
         :key="ranking.id"
       />
-      <Quotes />
+    </div>
+    <div class="row">
+      <Quotes
+        v-for="quote in quotes.slice(0, 1)"
+        :quoteData="quote"
+        :key="quote.id"
+      />
     </div>
   </div>
 </template>
