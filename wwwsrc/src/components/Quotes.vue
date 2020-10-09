@@ -1,7 +1,11 @@
 <template>
   <div class="col-12 quotes text-light text-center">
-    <h6>"{{ quoteData.description }}"</h6>
-    <small>-{{ quoteData.name }}</small>
+    <div class="card border-light mb-3 bg-transparent" style="max-width: 80rem">
+      <div class="card-body">
+        <h4 class="card-title">{{ quoteData.description }}</h4>
+        <p class="card-text">-{{ quoteData.name }}</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -21,4 +25,7 @@ export default {
 
 
 <style scoped>
+#bg-transparent {
+  background-color: #0a0a0a60;
+}
 </style>
