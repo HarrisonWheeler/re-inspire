@@ -28,6 +28,7 @@
             />
           </p>
           <p class="lead text-center">
+            <!-- need to change the way this is implemented - need to fetch more stories from the local state on button click, not just hide them -->
             <button
               class="btn btn-info btn-lg"
               v-if="!isLoadingStories"
@@ -51,6 +52,9 @@
         :key="quote.id"
       />
     </div>
+    <div class="row">
+      <Tasks v-for="task in tasks" :taskData="task" :key="task.id" />
+    </div>
   </div>
 </template>
 
@@ -61,6 +65,7 @@ import News from "../components/News";
 import moment from "moment";
 import Quotes from "../components/Quotes";
 import Weather from "../components/Weather";
+import Tasks from "../components/Tasks";
 export default {
   name: "home",
   data() {
@@ -76,6 +81,7 @@ export default {
     this.$store.dispatch("getRankings");
     this.$store.dispatch("getFootballScores");
     this.$store.dispatch("getNews");
+    this.$store.dispatch("getTasks");
   },
   computed: {
     // best way to refactor?
@@ -94,6 +100,9 @@ export default {
     headlineNews() {
       return this.$store.state.activeNews;
     },
+    tasks() {
+      return this.$store.state.activeTasks;
+    },
     currentTime() {
       return moment().format("h:mm a, MMMM Do");
     },
@@ -104,6 +113,7 @@ export default {
     News,
     Quotes,
     Weather,
+    Tasks,
   },
 };
 </script>

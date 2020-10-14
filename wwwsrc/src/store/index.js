@@ -5,12 +5,14 @@ import imageModule from "./ImageModule"
 import SportsModule from "./SportsModule"
 import NewsModule from "./NewsModule"
 import QuotesModule from "./QuotesModule"
+import TasksModule from "./TaskModule"
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
     activeQuotes: [],
+    activeTasks: [],
     activeWeather: {},
     randomImage: {},
     activeRankings: [],
@@ -20,6 +22,9 @@ export default new Vuex.Store({
   mutations: {
     setActiveQuotes(state, quotes) {
       state.activeQuotes = quotes
+    },
+    setActiveTasks(state, tasks) {
+      state.activeTasks = tasks
     },
     setActiveWeather(state, weather) {
       state.activeWeather = weather
@@ -44,5 +49,6 @@ export default new Vuex.Store({
     SportsModule,
     NewsModule,
     QuotesModule,
+    TasksModule
   }
 })

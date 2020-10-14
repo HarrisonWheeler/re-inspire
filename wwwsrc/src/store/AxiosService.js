@@ -10,6 +10,12 @@ export const quotesApi = Axios.create({
   withCredentials: true
 });
 
+export const tasksApi = Axios.create({
+  baseURL: baseUrl + "api/",
+  timeout: 5000,
+  withCredentials: true
+});
+
 
 let weatherKey = "https://api.climacell.co/v3/weather"
 
