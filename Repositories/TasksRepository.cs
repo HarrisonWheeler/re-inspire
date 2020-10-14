@@ -4,7 +4,7 @@ using System.Data;
 using Dapper;
 using Reinspire.Models;
 
-namespace Reinspire.Services
+namespace Reinspire.Repository
 {
   public class TasksRepository
   {
@@ -19,6 +19,17 @@ namespace Reinspire.Services
     {
       string sql = "SELECT * FROM tasks";
       return _db.Query<Task>(sql);
+    }
+
+    public int Create(Task newTask)
+    {
+      string sql = @"
+      INSERT INTO tasks
+      (name, description, isDone)
+      VALUES
+      (@name, @description, @isDone);
+      SELECT LAST_INSERT_ID();";
+      return _db.ExecuteScalar<int>(sql, newTask);
     }
   }
 }

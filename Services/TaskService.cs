@@ -1,6 +1,7 @@
-using System;
 using System.Collections.Generic;
 using Reinspire.Models;
+using Reinspire.Repository;
+
 
 namespace Reinspire.Services
 {
@@ -19,5 +20,11 @@ namespace Reinspire.Services
       return _repo.Get();
     }
 
+    public Task Create(Task newTask)
+    {
+      int id = _repo.Create(newTask);
+      newTask.Id = id;
+      return newTask;
+    }
   }
 }

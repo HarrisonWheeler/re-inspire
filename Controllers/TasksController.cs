@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Reinspire.Models;
 using Reinspire.Services;
 
 namespace Reinspire.Controllers
@@ -24,6 +24,20 @@ namespace Reinspire.Controllers
       try
       {
         return Ok(_ts.Get());
+      }
+      catch (System.Exception err)
+      {
+        return BadRequest(err.Message);
+      }
+    }
+
+    [HttpPost]
+
+    public ActionResult<Task> Post([FromBody] Task newTask)
+    {
+      try
+      {
+        return Ok(_ts.Create(newTask));
       }
       catch (System.Exception err)
       {

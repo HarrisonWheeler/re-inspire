@@ -60,6 +60,9 @@ namespace Reinspire
 
       services.AddTransient<QuotesService>();
       services.AddTransient<QuotesRepository>();
+      services.AddTransient<TaskService>();
+      services.AddTransient<TasksRepository>();
+
     }
 
     private IDbConnection CreateDbConnection()
