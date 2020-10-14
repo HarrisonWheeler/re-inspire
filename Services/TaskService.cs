@@ -1,12 +1,23 @@
 using System;
+using System.Collections.Generic;
+using Reinspire.Models;
 
 namespace Reinspire.Services
 {
   public class TaskService
   {
-    internal object Get()
+
+    public readonly TasksRepository _repo;
+
+    public TaskService(TasksRepository repo)
     {
-      throw new NotImplementedException();
+      _repo = repo;
     }
+
+    public IEnumerable<Task> Get()
+    {
+      return _repo.Get();
+    }
+
   }
 }
