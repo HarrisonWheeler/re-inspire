@@ -6,6 +6,7 @@
     :style="{ backgroundImage: `url(${images.urls.full})` }"
   >
     <div class="row justify-content-end text-light p-2">
+      <Tasks v-for="task in tasks" :taskData="task" :key="task.id" />
       <Weather />
     </div>
     <div class="row justify-content-center">
@@ -20,7 +21,6 @@
           <p class="lead text-center">Here are some headlines:</p>
           <hr class="my-4" />
           <p v-if="showMoreStories">
-            <!-- need to change how this is displaying data to show more stories -->
             <News
               v-for="news in headlineNews.slice(0, 3)"
               :newsData="news"
@@ -52,9 +52,7 @@
         :key="quote.id"
       />
     </div>
-    <div class="row">
-      <Tasks v-for="task in tasks" :taskData="task" :key="task.id" />
-    </div>
+    <div class="row"></div>
   </div>
 </template>
 
