@@ -20,6 +20,12 @@ namespace Reinspire.Repository
       string sql = "SELECT * FROM tasks";
       return _db.Query<Task>(sql);
     }
+    public Task GetById(int taskId)
+    {
+      string sql = @"
+      SELECT * FROM tasks WHERE id = @taskId";
+      return _db.QueryFirstOrDefault<Task>(sql, new { taskId });
+    }
 
     public int Create(Task newTask)
     {
@@ -30,6 +36,18 @@ namespace Reinspire.Repository
       (@name, @description, @isDone);
       SELECT LAST_INSERT_ID();";
       return _db.ExecuteScalar<int>(sql, newTask);
+    }
+
+    public bool Update(Task updatedTask)
+    {
+      string sql = @"UPDATE tasks
+      SET
+      name = @name,
+      description = @description,
+      isDone = @isDone
+      WHERE id = @id LIMIT 1;";
+      int rowsAffected = _db.Execute(sql, updatedTask);
+      return rowsAffected == 1;
     }
   }
 }
