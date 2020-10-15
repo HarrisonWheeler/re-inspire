@@ -73,6 +73,20 @@ namespace Reinspire.Controllers
         return BadRequest(err.Message);
       }
     }
+
+    [HttpDelete("{taskId}")]
+
+    public ActionResult<string> Delete(int taskId)
+    {
+      try
+      {
+        return Ok(_ts.Delete(taskId));
+      }
+      catch (System.Exception err)
+      {
+        return BadRequest(err.Message);
+      }
+    }
   }
 
 }

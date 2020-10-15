@@ -50,5 +50,9 @@ namespace Reinspire.Services
       return updatedTask;
     }
 
+    public bool Delete(int taskId)
+    {
+      return _repo.Delete(taskId);
+    }
   }
 }

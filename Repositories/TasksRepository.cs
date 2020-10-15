@@ -49,5 +49,12 @@ namespace Reinspire.Repository
       int rowsAffected = _db.Execute(sql, updatedTask);
       return rowsAffected == 1;
     }
+
+    public bool Delete(int taskId)
+    {
+      string sql = "DELETE FROM tasks WHERE id = @taskId LIMIT 1;";
+      int rowsAffected = _db.Execute(sql, new { taskId });
+      return rowsAffected == 1;
+    }
   }
 }
