@@ -1,15 +1,16 @@
 <template>
-  <tr id="bg-transparent" v-if="taskData.isDone == true" class="isDone">
+  <tr id="bg-transparent" v-if="taskData.isDone == false" class="isDone">
     <td>{{ taskData.name }}</td>
     <td>{{ taskData.description }}</td>
     <td>
       <div class="custom-control custom-switch pt-1">
+        <!-- TODO toggle only works for the first task, and doesn't after that -->
         <input
           v-model="taskData.isDone"
           type="checkbox"
           class="custom-control-input"
           id="customSwitch1"
-          checked=""
+          :checked="taskData.isDone"
         />
         <label class="custom-control-label" for="customSwitch1"></label>
       </div>

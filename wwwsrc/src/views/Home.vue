@@ -41,7 +41,7 @@
             />
           </p>
           <p class="lead text-center">
-            <!-- need to change the way this is implemented - need to fetch more stories from the local state on button click, not just hide them -->
+            <!-- TODO need to change the way this is implemented - need to fetch more stories from the local state on button click, not just hide them -->
             <button
               class="btn btn-info btn-lg"
               v-if="!isLoadingStories"
@@ -76,6 +76,7 @@ import moment from "moment";
 import Quotes from "../components/Quotes";
 import Weather from "../components/Weather";
 import Tasks from "../components/Tasks";
+import TaskModal from "../components/TaskModal";
 export default {
   name: "home",
   data() {
@@ -124,6 +125,7 @@ export default {
     Quotes,
     Weather,
     Tasks,
+    TaskModal,
   },
 };
 </script>
