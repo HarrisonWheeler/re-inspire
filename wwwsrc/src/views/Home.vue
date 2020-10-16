@@ -10,7 +10,6 @@
         <table class="table table-dark rounded" id="bg-transparent">
           <thead>
             <tr>
-              <th scope="col">#</th>
               <th scope="col">Task</th>
               <th scope="col">Description</th>
               <th scope="col">Done</th>

@@ -1,6 +1,5 @@
 <template>
   <tr class="tasks" id="bg-transparent">
-    <th scope="row">Dark</th>
     <td>{{ taskData.name }}</td>
     <td>{{ taskData.description }}</td>
     <td>{{ taskData.isDone }}</td>
