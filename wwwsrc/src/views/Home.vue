@@ -6,7 +6,7 @@
     :style="{ backgroundImage: `url(${images.urls.full})` }"
   >
     <div class="row justify-content-between text-light p-2">
-      <div class="col-6">
+      <div class="col-8">
         <table class="table table-dark rounded" id="bg-transparent">
           <thead>
             <tr>

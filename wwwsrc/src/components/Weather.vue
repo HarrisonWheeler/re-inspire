@@ -40,7 +40,6 @@
 <script>
 export default {
   name: "weather",
-  props: ["weatherData"],
   data() {
     return {};
   },
