@@ -5,8 +5,22 @@
     v-if="images.urls"
     :style="{ backgroundImage: `url(${images.urls.full})` }"
   >
-    <div class="row justify-content-end text-light p-2">
-      <Tasks v-for="task in tasks" :taskData="task" :key="task.id" />
+    <div class="row justify-content-between text-light p-2">
+      <div class="col-6">
+        <table class="table table-dark rounded" id="bg-transparent">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Task</th>
+              <th scope="col">Description</th>
+              <th scope="col">Done</th>
+            </tr>
+          </thead>
+          <tbody>
+            <Tasks v-for="task in tasks" :taskData="task" :key="task.id" />
+          </tbody>
+        </table>
+      </div>
       <Weather />
     </div>
     <div class="row justify-content-center">
@@ -52,7 +66,6 @@
         :key="quote.id"
       />
     </div>
-    <div class="row"></div>
   </div>
 </template>
 
@@ -95,11 +108,11 @@ export default {
     scores() {
       return this.$store.state.activeScores;
     },
-    headlineNews() {
-      return this.$store.state.activeNews;
-    },
     tasks() {
       return this.$store.state.activeTasks;
+    },
+    headlineNews() {
+      return this.$store.state.activeNews;
     },
     currentTime() {
       return moment().format("h:mm a, MMMM Do");

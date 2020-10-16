@@ -1,21 +1,9 @@
 <template>
-  <tr class="tasks table-light text-dark">
-    <th scope="row" id="bg-transparent"></th>
-    <td>
-      <h6>
-        {{ taskData.name }}
-      </h6>
-    </td>
-    <td>
-      <h6>
-        {{ taskData.description }}
-      </h6>
-    </td>
-    <td>
-      <h6>
-        {{ taskData.isDone }}
-      </h6>
-    </td>
+  <tr class="tasks" id="bg-transparent">
+    <th scope="row">Dark</th>
+    <td>{{ taskData.name }}</td>
+    <td>{{ taskData.description }}</td>
+    <td>{{ taskData.isDone }}</td>
   </tr>
 </template>
 
@@ -27,6 +15,7 @@ export default {
   data() {
     return {};
   },
+  mounted() {},
   computed: {},
   methods: {},
   components: {},
