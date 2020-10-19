@@ -18,9 +18,18 @@
             <Tasks v-for="task in tasks" :taskData="task" :key="task.id" />
           </tbody>
         </table>
+        <button
+          type="button"
+          class="btn btn-info"
+          data-toggle="modal"
+          data-target="#taskModal"
+        >
+          Create Task
+        </button>
       </div>
       <Weather />
     </div>
+    <TaskModal />
     <div class="row justify-content-center">
       <div class="col-6">
         <div
@@ -64,7 +73,6 @@
         :key="quote.id"
       />
     </div>
-    <TaskModal />
   </div>
 </template>
 
