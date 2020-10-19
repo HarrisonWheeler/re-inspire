@@ -7,11 +7,10 @@
   >
     <div class="row justify-content-between text-light p-2">
       <div class="col-8">
-        <table class="table table-dark rounded" id="bg-transparent">
+        <table class="table table-dark rounded table-sm" id="bg-transparent">
           <thead>
             <tr>
               <th scope="col">Task</th>
-              <th scope="col">Description</th>
               <th scope="col">Done</th>
             </tr>
           </thead>
@@ -65,6 +64,7 @@
         :key="quote.id"
       />
     </div>
+    <TaskModal />
   </div>
 </template>
 
