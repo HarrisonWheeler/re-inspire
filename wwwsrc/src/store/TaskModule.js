@@ -20,6 +20,15 @@ export default {
       } catch (error) {
         console.error(error)
       }
+    },
+    async deleteTask({ dispatch }, taskId) {
+      try {
+        let res = await tasksApi.delete("tasks" + taskId)
+        console.log(res);
+        dispatch("getTasks")
+      } catch (error) {
+        console.error(error)
+      }
     }
   },
 }

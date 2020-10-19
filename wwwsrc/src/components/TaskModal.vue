@@ -15,6 +15,7 @@
         </div>
         <form @submit.prevent="createTask()">
           <div class="modal-body">
+            <label class="col-form-label" for="inputDefault">Task Name</label>
             <div class="form-group">
               <input
                 v-model="newTask.name"
@@ -53,6 +54,7 @@
 
 
 <script>
+import swal from "../components/SwalService";
 export default {
   name: "taskModal",
   data() {
@@ -67,6 +69,8 @@ export default {
         name: this.newTask.name,
         description: this.newTask.description,
       });
+      this.newTask = {};
+      swal.toast("Task Created!");
     },
   },
   components: {},
