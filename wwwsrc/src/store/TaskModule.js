@@ -11,6 +11,15 @@ export default {
       } catch (error) {
         console.error(error)
       }
+    },
+    async createTask({ dispatch }, newTaskData) {
+      try {
+        let res = await tasksApi.post("tasks", newTaskData)
+        console.log(res);
+        dispatch("getTasks")
+      } catch (error) {
+        console.error(error)
+      }
     }
   },
 }

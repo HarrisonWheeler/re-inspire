@@ -13,18 +13,35 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          <div class="form-group">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Enter Task name..."
-              id="inputDefault"
-            />
+        <form @submit.prevent="createTask()">
+          <div class="modal-body">
+            <div class="form-group">
+              <input
+                v-model="newTask.name"
+                type="text"
+                class="form-control"
+                placeholder="Enter Task name..."
+                id="inputDefault"
+              />
+            </div>
+            <label class="col-form-label" for="inputDefault"
+              >Task Description</label
+            >
+            <div class="form-group">
+              <input
+                v-model="newTask.description"
+                type="text"
+                class="form-control"
+                placeholder="Enter Task description..."
+                id="inputDefault"
+              />
+            </div>
           </div>
-        </div>
+        </form>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Create Task</button>
+          <button type="button" class="btn btn-primary" @click="createTask()">
+            Create Task
+          </button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">
             Close
           </button>
@@ -39,10 +56,19 @@
 export default {
   name: "taskModal",
   data() {
-    return {};
+    return {
+      newTask: {},
+    };
   },
   computed: {},
-  methods: {},
+  methods: {
+    createTask() {
+      this.$store.dispatch("createTask", {
+        name: this.newTask.name,
+        description: this.newTask.description,
+      });
+    },
+  },
   components: {},
 };
 </script>
