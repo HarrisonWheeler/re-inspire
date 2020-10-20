@@ -1,9 +1,9 @@
 <template>
-  <tr id="bg-transparent" class="tasks p-2">
-    <td>{{ taskData.name }}</td>
-    <td>{{ taskData.description }}</td>
-    <td>{{ taskData.isDone }}</td>
-    <button class="btn btn-sm btn-danger" @click="deleteTask(taskData.id)">
+  <tr id="bg-transparent">
+    <td class="p-2">{{ taskData.name }}</td>
+    <td class="p-2">{{ taskData.description }}</td>
+    <td class="p-2">{{ taskData.isDone }}</td>
+    <button class="btn btn-sm btn-danger mt-1" @click="deleteTask(taskData.id)">
       Done
     </button>
   </tr>
@@ -11,6 +11,7 @@
 
 
 <script>
+import swal from "../components/SwalService";
 export default {
   name: "tasks",
   props: ["taskData"],
@@ -22,6 +23,7 @@ export default {
   methods: {
     deleteTask(id) {
       this.$store.dispatch("deleteTask", id);
+      swal.toast("Task Deleted!");
     },
   },
   components: {},

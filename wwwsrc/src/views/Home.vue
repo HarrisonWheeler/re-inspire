@@ -9,7 +9,7 @@
       <div class="col-8">
         <table
           class="table table-dark rounded table-sm table-borderless"
-          style="width: 60%"
+          style="width: 65%"
           id="bg-transparent"
         >
           <thead>
@@ -49,7 +49,6 @@
           <News v-for="news in headlineNews" :newsData="news" :key="news.id" />
         </p>
         <p class="lead text-center">
-          <!-- TODO need to change the way this is implemented - need to fetch more stories from the local state on button click, not just hide them - create a method?-->
           <button
             class="btn btn-info btn-lg"
             @click="showedCount += moreCount"
