@@ -57,7 +57,6 @@
             <!-- TODO need to change the way this is implemented - need to fetch more stories from the local state on button click, not just hide them - create a method?-->
             <button
               class="btn btn-info btn-lg"
-              v-if="!isLoadingStories"
               @click="showMoreStories = !showMoreStories"
             >
               See More....
@@ -94,7 +93,6 @@ export default {
   name: "home",
   data() {
     return {
-      isLoadingStories: false,
       showMoreStories: true,
     };
   },
