@@ -23,7 +23,7 @@ export default {
     },
     async deleteTask({ dispatch }, taskId) {
       try {
-        let res = await tasksApi.delete("tasks" + taskId)
+        let res = await tasksApi.delete("tasks/" + taskId)
         console.log(res);
         dispatch("getTasks")
       } catch (error) {

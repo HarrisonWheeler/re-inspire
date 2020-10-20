@@ -7,10 +7,15 @@
   >
     <div class="row justify-content-between text-light p-2">
       <div class="col-8">
-        <table class="table table-dark rounded table-sm" id="bg-transparent">
+        <table
+          class="table table-dark rounded table-sm table-borderless"
+          style="width: 60%"
+          id="bg-transparent"
+        >
           <thead>
-            <tr>
-              <th scope="col">Task</th>
+            <tr class="m-2">
+              <th scope="col">Tasks: {{ tasks.length }}</th>
+              <th scope="col">Description</th>
               <th scope="col">Done</th>
             </tr>
           </thead>
@@ -49,7 +54,7 @@
             />
           </p>
           <p class="lead text-center">
-            <!-- TODO need to change the way this is implemented - need to fetch more stories from the local state on button click, not just hide them -->
+            <!-- TODO need to change the way this is implemented - need to fetch more stories from the local state on button click, not just hide them - create a method?-->
             <button
               class="btn btn-info btn-lg"
               v-if="!isLoadingStories"
@@ -149,5 +154,8 @@ export default {
 }
 #bg-transparent {
   background-color: #0a0a0a60;
+}
+tr {
+  margin: 0px;
 }
 </style>

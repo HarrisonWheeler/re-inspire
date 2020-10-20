@@ -1,23 +1,11 @@
 <template>
-  <tr id="bg-transparent" v-if="taskData.isDone == false" class="isDone">
+  <tr id="bg-transparent" class="tasks p-2">
     <td>{{ taskData.name }}</td>
-    <td>
-      <div class="custom-control custom-switch cursor pt-1">
-        <!-- TODO toggle only works for the first task, and doesn't after that -->
-        <input
-          v-model="taskData.isDone"
-          type="checkbox"
-          class="custom-control-input"
-          id="customSwitch1"
-          :checked="taskData.isDone"
-        />
-        <label class="custom-control-label" for="customSwitch1"></label>
-      </div>
-    </td>
-    <i
-      class="fas fa-trash text-danger cursor"
-      @click="deleteTask(taskData.id)"
-    ></i>
+    <td>{{ taskData.description }}</td>
+    <td>{{ taskData.isDone }}</td>
+    <button class="btn btn-sm btn-danger" @click="deleteTask(taskData.id)">
+      Done
+    </button>
   </tr>
 </template>
 
