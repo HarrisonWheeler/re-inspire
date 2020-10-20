@@ -36,33 +36,28 @@
     </div>
     <TaskModal />
     <div class="row justify-content-center">
-      <div class="col-6">
-        <div
-          class="jumbotron text-light"
-          id="bg-transparent"
-          style="min-width: 50rem"
-        >
-          <h1 class="display-3 text-center">Hello, Harrison!</h1>
-          <h1 class="display-4 text-center">It's {{ currentTime }}</h1>
-          <p class="lead text-center">Here are some headlines:</p>
-          <hr class="my-4" />
-          <p v-if="showMoreStories">
-            <News
-              v-for="news in headlineNews.slice(0, 3)"
-              :newsData="news"
-              :key="news.id"
-            />
-          </p>
-          <p class="lead text-center">
-            <!-- TODO need to change the way this is implemented - need to fetch more stories from the local state on button click, not just hide them - create a method?-->
-            <button
-              class="btn btn-info btn-lg"
-              @click="showMoreStories = !showMoreStories"
-            >
-              See More....
-            </button>
-          </p>
-        </div>
+      <div
+        class="jumbotron text-light"
+        id="bg-transparent"
+        style="max-width: 50rem"
+      >
+        <h1 class="display-3 text-center">Hello, Harrison!</h1>
+        <h1 class="display-4 text-center">It's {{ currentTime }}</h1>
+        <p class="lead text-center">Here are some headlines:</p>
+        <hr class="my-4" />
+        <p>
+          <News v-for="news in headlineNews" :newsData="news" :key="news.id" />
+        </p>
+        <p class="lead text-center">
+          <!-- TODO need to change the way this is implemented - need to fetch more stories from the local state on button click, not just hide them - create a method?-->
+          <button
+            class="btn btn-info btn-lg"
+            @click="showedCount += moreCount"
+            :disabled="!moreToShow"
+          >
+            See More....
+          </button>
+        </p>
       </div>
       <Sports
         v-for="ranking in rankings"
@@ -93,7 +88,8 @@ export default {
   name: "home",
   data() {
     return {
-      showMoreStories: true,
+      showedCount: 3,
+      moreCount: 3,
     };
   },
   mounted() {
@@ -123,7 +119,10 @@ export default {
       return this.$store.state.activeTasks;
     },
     headlineNews() {
-      return this.$store.state.activeNews;
+      return this.$store.state.activeNews.slice(0, this.showedCount);
+    },
+    moreToShow() {
+      return this.showedCount < this.$store.state.activeNews.length;
     },
     currentTime() {
       return moment().format("h:mm a, MMMM Do");
