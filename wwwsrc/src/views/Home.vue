@@ -73,6 +73,18 @@
       >
         Get More Quotes...
       </button>
+      <div class="custom-control custom-switch ml-3">
+        <input
+          v-model="allowExplicit"
+          type="checkbox"
+          class="custom-control-input"
+          id="customSwitch1"
+          checked=""
+        />
+        <label class="custom-control-label text-light" for="customSwitch1"
+          >Allow Explicit Quotes</label
+        >
+      </div>
     </div>
   </div>
 </template>
@@ -94,6 +106,7 @@ export default {
       moreCount: 3,
       quoteCount: 1,
       moreQuotes: 1,
+      allowExplicit: false,
     };
   },
   mounted() {
