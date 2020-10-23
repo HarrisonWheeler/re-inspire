@@ -1,5 +1,5 @@
 <template>
-  <div class="col-12 quotes text-light text-center">
+  <div class="col-12 quotes text-light text-center pb-2">
     <div class="card border-light mb-3 bg-transparent" style="max-width: 80rem">
       <div class="card-body">
         <h4 class="card-title">{{ quoteData.description }}</h4>
@@ -15,7 +15,10 @@ export default {
   name: "quotes",
   props: ["quoteData"],
   data() {
-    return {};
+    return {
+      showedCount: 1,
+      moreCount: 1,
+    };
   },
   computed: {},
   methods: {},

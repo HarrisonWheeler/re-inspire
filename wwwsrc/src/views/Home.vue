@@ -64,12 +64,15 @@
         :key="ranking.id"
       />
     </div>
-    <div class="row">
-      <Quotes
-        v-for="quote in quotes.slice(0, 1)"
-        :quoteData="quote"
-        :key="quote.id"
-      />
+    <div class="row justify-content-center pb-2">
+      <Quotes v-for="quote in quotes" :quoteData="quote" :key="quote.id" />
+      <button
+        class="btn btn-info"
+        @click="quoteCount += moreQuotes"
+        :disabled="!moreToShow"
+      >
+        Get More Quotes...
+      </button>
     </div>
   </div>
 </template>
@@ -89,6 +92,8 @@ export default {
     return {
       showedCount: 3,
       moreCount: 3,
+      quoteCount: 1,
+      moreQuotes: 1,
     };
   },
   mounted() {
@@ -102,9 +107,6 @@ export default {
   },
   computed: {
     // best way to refactor?
-    quotes() {
-      return this.$store.state.activeQuotes;
-    },
     images() {
       return this.$store.state.randomImage;
     },
@@ -116,6 +118,9 @@ export default {
     },
     tasks() {
       return this.$store.state.activeTasks;
+    },
+    quotes() {
+      return this.$store.state.activeQuotes.slice(0, this.quoteCount);
     },
     headlineNews() {
       return this.$store.state.activeNews.slice(0, this.showedCount);
